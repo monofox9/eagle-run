@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d07yp14onxomu"]
+
+[ext_resource type="Script" uid="uid://dt4tlj87ra67" path="res://scenes/parallax_2d.gd" id="1_6fv2f"]
+[ext_resource type="Texture2D" uid="uid://bvbik0nikvql4" path="res://assets/placeholders-DELETEME/clouds-1.png" id="1_h3dka"]
+[ext_resource type="Script" uid="uid://bwojikdp4204a" path="res://scenes/sky_near.gd" id="3_3tmo4"]
+[ext_resource type="Texture2D" uid="uid://dtaddusolx0y5" path="res://assets/placeholders-DELETEME/clouds-bottom-100px.png" id="4_3tmo4"]
+
+[node name="game-level" type="Node2D" unique_id=1273591819]
+
+[node name="sky-far" type="Parallax2D" parent="." unique_id=308305083]
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(1152, 0)
+script = ExtResource("1_6fv2f")
+scroll_speed = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="sky-far" unique_id=2008086532]
+position = Vector2(581, 328)
+texture = ExtResource("1_h3dka")
+
+[node name="sky-near" type="Parallax2D" parent="." unique_id=2110070668]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(1152, 0)
+script = ExtResource("3_3tmo4")
+
+[node name="Sprite2D" type="Sprite2D" parent="sky-near" unique_id=390959145]
+position = Vector2(580, 590)
+texture = ExtResource("4_3tmo4")
