@@ -2,10 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dt4tlj87ra67" path="res://scenes/parallax_2d.gd" id="1_6fv2f"]
 [ext_resource type="Texture2D" uid="uid://bvbik0nikvql4" path="res://assets/placeholders-DELETEME/clouds-1.png" id="1_h3dka"]
-[ext_resource type="Script" uid="uid://bwojikdp4204a" path="res://scenes/sky_near.gd" id="3_3tmo4"]
+[ext_resource type="Script" uid="uid://bwojikdp4204a" path="res://scripts/sky_near.gd" id="3_3tmo4"]
 [ext_resource type="Texture2D" uid="uid://dtaddusolx0y5" path="res://assets/placeholders-DELETEME/clouds-bottom-100px.png" id="4_3tmo4"]
+[ext_resource type="PackedScene" uid="uid://dll0bbidefnf6" path="res://scenes/player.tscn" id="5_hjd5e"]
+[ext_resource type="Script" uid="uid://bniudp4jlwk5c" path="res://scripts/coin_spawner.gd" id="7_1k01j"]
+[ext_resource type="Script" uid="uid://be4nanaebran1" path="res://scripts/score.gd" id="7_hfoqy"]
+[ext_resource type="Script" uid="uid://cbkk8x0jgqyla" path="res://scripts/instructions.gd" id="8_hfoqy"]
+[ext_resource type="Script" uid="uid://buktmt5oat7j6" path="res://scripts/coin_instructions.gd" id="9_bf4eo"]
+[ext_resource type="Script" uid="uid://co522udgdeidu" path="res://scripts/menu_btn.gd" id="10_aqf4n"]
+[ext_resource type="PackedScene" uid="uid://dkyvqoq2bbw4u" path="res://scenes/pause_menu.tscn" id="11_1rrsa"]
 
-[node name="game-level" type="Node2D" unique_id=1273591819]
+[node name="game-level" type="Node2D" unique_id=1273591819 groups=["player"]]
 
 [node name="sky-far" type="Parallax2D" parent="." unique_id=308305083]
 scroll_scale = Vector2(0.2, 1)
@@ -25,3 +32,62 @@ script = ExtResource("3_3tmo4")
 [node name="Sprite2D" type="Sprite2D" parent="sky-near" unique_id=390959145]
 position = Vector2(580, 590)
 texture = ExtResource("4_3tmo4")
+
+[node name="CharacterBody2D" parent="." unique_id=163987120 groups=["player"] instance=ExtResource("5_hjd5e")]
+position = Vector2(825, 335)
+scale = Vector2(0.5, 0.5)
+
+[node name="coin-spawner" type="Node2D" parent="." unique_id=620118593]
+script = ExtResource("7_1k01j")
+super_coin_DC = 18
+
+[node name="Timer" type="Timer" parent="coin-spawner" unique_id=1692531209]
+autostart = true
+
+[node name="ui" type="Node2D" parent="." unique_id=1393671024]
+position = Vector2(74, 243)
+
+[node name="score" type="Label" parent="ui" unique_id=176189869]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 34
+text = "Score:"
+script = ExtResource("7_hfoqy")
+
+[node name="instructions" type="Label" parent="ui" unique_id=615210548]
+offset_left = -28.0
+offset_top = 113.0
+offset_right = 540.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(1, 0.12941177, 0.14509805, 1)
+theme_override_font_sizes/font_size = 40
+text = "Left Click To Fly Up and Down"
+script = ExtResource("8_hfoqy")
+
+[node name="coin_instructions" type="Label" parent="ui" unique_id=67779427]
+visible = false
+offset_left = -21.0
+offset_top = 176.0
+offset_right = 547.0
+offset_bottom = 231.0
+theme_override_colors/font_color = Color(1, 0.12941177, 0.14509805, 1)
+theme_override_font_sizes/font_size = 40
+text = "Red coins are worth 5 points!"
+script = ExtResource("9_bf4eo")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1716326339]
+
+[node name="GameMenu" parent="PauseMenu" unique_id=158152038 instance=ExtResource("11_1rrsa")]
+unique_name_in_owner = true
+visible = false
+
+[node name="MenuBtn" type="Button" parent="PauseMenu" unique_id=299807934]
+offset_left = 17.0
+offset_top = 27.0
+offset_right = 70.0
+offset_bottom = 58.0
+text = "="
+script = ExtResource("10_aqf4n")
+
+[connection signal="timeout" from="coin-spawner/Timer" to="coin-spawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="PauseMenu/MenuBtn" to="PauseMenu/MenuBtn" method="_on_pressed"]

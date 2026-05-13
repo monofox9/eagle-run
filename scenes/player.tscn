@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dll0bbidefnf6"]
+
+[ext_resource type="Script" uid="uid://b6ba2fshe3mix" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bkm7gsoj2hnrb" path="res://assets/placeholders-DELETEME/bird_2_eagle.png" id="2_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_g2els")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 51.895714
+height = 224.27496
+
+[node name="player" type="CharacterBody2D" unique_id=163987120]
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=625007428]
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_dqkch")
+autoplay = "default"
+frame = 2
+frame_progress = 0.28370258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516584406]
+position = Vector2(14.999999, 17)
+rotation = 1.1860076
+shape = SubResource("CapsuleShape2D_g2els")
+debug_color = Color(0.72168946, 0.4070984, 0.6639946, 0.41960785)
+
+[connection signal="clicked" from="." to="." method="_on_clicked"]
