@@ -18,17 +18,13 @@ const SUPERCOIN = preload("uid://c1pxrv2jebkgb")
 @onready var coin_instructions: Label = $"../ui/coin_instructions"
 
 
-
-
-
 func _ready():
 	randomize()
 
 
 func _on_timer_timeout():
-	
-	var roll = randi_range(1,20)
-	print(roll)
+	var roll = randi_range(1, 20)
+	#print(roll)
 	var coin
 	
 	
