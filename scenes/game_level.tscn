@@ -14,22 +14,24 @@
 
 [node name="game-level" type="Node2D" unique_id=1273591819 groups=["player"]]
 
-[node name="sky-far" type="Parallax2D" parent="." unique_id=308305083]
+[node name="env" type="Node2D" parent="." unique_id=304212662]
+
+[node name="sky-far" type="Parallax2D" parent="env" unique_id=308305083]
 scroll_scale = Vector2(0.2, 1)
 repeat_size = Vector2(1152, 0)
 script = ExtResource("1_6fv2f")
 scroll_speed = 50.0
 
-[node name="Sprite2D" type="Sprite2D" parent="sky-far" unique_id=2008086532]
+[node name="Sprite2D" type="Sprite2D" parent="env/sky-far" unique_id=2008086532]
 position = Vector2(581, 328)
 texture = ExtResource("1_h3dka")
 
-[node name="sky-near" type="Parallax2D" parent="." unique_id=2110070668]
+[node name="sky-near" type="Parallax2D" parent="env" unique_id=2110070668]
 scroll_scale = Vector2(0.5, 1)
 repeat_size = Vector2(1152, 0)
 script = ExtResource("3_3tmo4")
 
-[node name="Sprite2D" type="Sprite2D" parent="sky-near" unique_id=390959145]
+[node name="Sprite2D" type="Sprite2D" parent="env/sky-near" unique_id=390959145]
 position = Vector2(580, 590)
 texture = ExtResource("4_3tmo4")
 
@@ -75,7 +77,7 @@ theme_override_font_sizes/font_size = 40
 text = "Red coins are worth 5 points!"
 script = ExtResource("9_bf4eo")
 
-[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1716326339]
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1716326339 groups=["ui"]]
 
 [node name="GameMenu" parent="PauseMenu" unique_id=158152038 instance=ExtResource("11_1rrsa")]
 unique_name_in_owner = true

@@ -10,15 +10,12 @@ func _ready() -> void:
 
 var already_displayed = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _on_supercoin_spawn():
 	if already_displayed == false:
 		visible = true
 
-func _on_coin_picked_up(points,isSuperCoin):
+func _on_coin_picked_up(points, isSuperCoin):
 	if isSuperCoin == true:
 		already_displayed = true
 		visible = false

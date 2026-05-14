@@ -6,12 +6,15 @@ signal clicked # @maynotuse
 @export var acceleration: float = 8.0
 @export var stop_threshold: float = 4.0
 
+
+
 var target_y: float
 
 func _ready():
 	target_y = global_position.y
+	
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		#Emit signal @maynotuse
 		emit_signal("clicked")
