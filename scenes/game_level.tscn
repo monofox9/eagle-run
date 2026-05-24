@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d07yp14onxomu"]
 
 [ext_resource type="Script" uid="uid://dt4tlj87ra67" path="res://scenes/parallax_2d.gd" id="1_6fv2f"]
-[ext_resource type="Texture2D" uid="uid://bvbik0nikvql4" path="res://assets/placeholders-DELETEME/clouds-1.png" id="1_h3dka"]
+[ext_resource type="Texture2D" uid="uid://dkk8aag4xtae6" path="res://assets/env/eaglrun-sky-main.png" id="2_1rrsa"]
 [ext_resource type="Script" uid="uid://bwojikdp4204a" path="res://scripts/sky_near.gd" id="3_3tmo4"]
-[ext_resource type="Texture2D" uid="uid://dtaddusolx0y5" path="res://assets/placeholders-DELETEME/clouds-bottom-100px.png" id="4_3tmo4"]
+[ext_resource type="Texture2D" uid="uid://6jx8kt3ro8lu" path="res://assets/env/eaglerun-rooftops.png" id="4_1rrsa"]
 [ext_resource type="PackedScene" uid="uid://dll0bbidefnf6" path="res://scenes/player.tscn" id="5_hjd5e"]
 [ext_resource type="Script" uid="uid://bniudp4jlwk5c" path="res://scripts/coin_spawner.gd" id="7_1k01j"]
 [ext_resource type="Script" uid="uid://be4nanaebran1" path="res://scripts/score.gd" id="7_hfoqy"]
@@ -20,24 +20,25 @@
 scroll_scale = Vector2(0.2, 1)
 repeat_size = Vector2(1152, 0)
 script = ExtResource("1_6fv2f")
-scroll_speed = 50.0
+scroll_speed = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="env/sky-far" unique_id=2008086532]
 position = Vector2(581, 328)
-texture = ExtResource("1_h3dka")
+texture = ExtResource("2_1rrsa")
 
 [node name="sky-near" type="Parallax2D" parent="env" unique_id=2110070668]
 scroll_scale = Vector2(0.5, 1)
 repeat_size = Vector2(1152, 0)
 script = ExtResource("3_3tmo4")
+scroll_speed = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="env/sky-near" unique_id=390959145]
-position = Vector2(580, 590)
-texture = ExtResource("4_3tmo4")
+position = Vector2(580, 603)
+texture = ExtResource("4_1rrsa")
 
 [node name="CharacterBody2D" parent="." unique_id=163987120 groups=["player"] instance=ExtResource("5_hjd5e")]
 position = Vector2(825, 335)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 
 [node name="coin-spawner" type="Node2D" parent="." unique_id=620118593]
 script = ExtResource("7_1k01j")
