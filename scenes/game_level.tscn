@@ -37,7 +37,7 @@ position = Vector2(580, 603)
 texture = ExtResource("4_1rrsa")
 
 [node name="CharacterBody2D" parent="." unique_id=163987120 groups=["player"] instance=ExtResource("5_hjd5e")]
-position = Vector2(825, 335)
+position = Vector2(620, 329)
 scale = Vector2(0.4, 0.4)
 
 [node name="coin-spawner" type="Node2D" parent="." unique_id=620118593]
@@ -48,11 +48,12 @@ super_coin_DC = 18
 autostart = true
 
 [node name="ui" type="Node2D" parent="." unique_id=1393671024]
-position = Vector2(74, 243)
+position = Vector2(502, 22)
 
 [node name="score" type="Label" parent="ui" unique_id=176189869]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.84313726, 0.2627451, 0.88235295, 1)
 theme_override_font_sizes/font_size = 34
 text = "Score:"
 script = ExtResource("7_hfoqy")
