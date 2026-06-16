@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 ScoreManager="*uid://hxbwec445fg"
+DayNightManager="*uid://blcfqsmpeupfe"
 
 [global_group]
 

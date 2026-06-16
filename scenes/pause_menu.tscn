@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkyvqoq2bbw4u"]
 
 [ext_resource type="Script" uid="uid://rv7lq45ck1an" path="res://scripts/resume_btn.gd" id="1_n87rw"]
+[ext_resource type="Script" uid="uid://bw44u6bru2ynq" path="res://scripts/day_night_btn.gd" id="2_myx47"]
 
 [node name="GameMenu" type="Control" unique_id=158152038]
 process_mode = 3
@@ -46,4 +47,9 @@ layout_mode = 2
 text = "Resume Game"
 script = ExtResource("1_n87rw")
 
+[node name="DayNightBtn" type="Button" parent="GridContainer" unique_id=483107016]
+layout_mode = 2
+script = ExtResource("2_myx47")
+
 [connection signal="pressed" from="GridContainer/ResumeBtn" to="GridContainer/ResumeBtn" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/DayNightBtn" to="GridContainer/DayNightBtn" method="_on_pressed"]
