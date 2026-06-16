@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dll0bbidefnf6" path="res://scenes/player.tscn" id="5_hjd5e"]
 [ext_resource type="Script" uid="uid://bniudp4jlwk5c" path="res://scripts/coin_spawner.gd" id="7_1k01j"]
 [ext_resource type="Script" uid="uid://be4nanaebran1" path="res://scripts/score.gd" id="7_hfoqy"]
+[ext_resource type="FontFile" uid="uid://b7rct46ij4ige" path="res://assets/ui/fonts/BitcountGridDouble-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="8_3b7dt"]
 [ext_resource type="Script" uid="uid://cbkk8x0jgqyla" path="res://scripts/instructions.gd" id="8_hfoqy"]
 [ext_resource type="Script" uid="uid://buktmt5oat7j6" path="res://scripts/coin_instructions.gd" id="9_bf4eo"]
 [ext_resource type="Script" uid="uid://co522udgdeidu" path="res://scripts/menu_btn.gd" id="10_aqf4n"]
@@ -53,30 +54,34 @@ autostart = true
 position = Vector2(502, 22)
 
 [node name="score" type="Label" parent="ui" unique_id=176189869]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.84313726, 0.2627451, 0.88235295, 1)
-theme_override_font_sizes/font_size = 34
+offset_left = -477.0
+offset_top = 450.0
+offset_right = -377.0
+offset_bottom = 497.0
+theme_override_colors/font_color = Color(1, 0.17254902, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("8_3b7dt")
+theme_override_font_sizes/font_size = 40
 text = "Score:"
 script = ExtResource("7_hfoqy")
 
 [node name="instructions" type="Label" parent="ui" unique_id=615210548]
-offset_left = -28.0
-offset_top = 113.0
-offset_right = 540.0
-offset_bottom = 168.0
+offset_left = -463.0
+offset_top = 170.0
+offset_right = 233.0
+offset_bottom = 225.0
 theme_override_colors/font_color = Color(1, 0.12941177, 0.14509805, 1)
+theme_override_fonts/font = ExtResource("8_3b7dt")
 theme_override_font_sizes/font_size = 40
 text = "Left Click To Fly Up and Down"
 script = ExtResource("8_hfoqy")
 
 [node name="coin_instructions" type="Label" parent="ui" unique_id=67779427]
-visible = false
-offset_left = -21.0
-offset_top = 176.0
-offset_right = 547.0
-offset_bottom = 231.0
+offset_left = -467.0
+offset_top = 231.0
+offset_right = 101.0
+offset_bottom = 286.0
 theme_override_colors/font_color = Color(1, 0.12941177, 0.14509805, 1)
+theme_override_fonts/font = ExtResource("8_3b7dt")
 theme_override_font_sizes/font_size = 40
 text = "Red coins are worth 5 points!"
 script = ExtResource("9_bf4eo")
