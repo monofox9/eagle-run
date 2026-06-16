@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d07yp14onxomu"]
 
 [ext_resource type="Script" uid="uid://dt4tlj87ra67" path="res://scenes/parallax_2d.gd" id="1_6fv2f"]
+[ext_resource type="Script" uid="uid://cd1dsh30ysew0" path="res://scripts/game_level.gd" id="1_j5fpy"]
 [ext_resource type="Texture2D" uid="uid://dkk8aag4xtae6" path="res://assets/env/eaglrun-sky-main.png" id="2_1rrsa"]
 [ext_resource type="Script" uid="uid://bwojikdp4204a" path="res://scripts/sky_near.gd" id="3_3tmo4"]
 [ext_resource type="Texture2D" uid="uid://6jx8kt3ro8lu" path="res://assets/env/eaglerun-rooftops.png" id="4_1rrsa"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dkyvqoq2bbw4u" path="res://scenes/pause_menu.tscn" id="11_1rrsa"]
 
 [node name="game-level" type="Node2D" unique_id=1273591819 groups=["player"]]
+script = ExtResource("1_j5fpy")
 
 [node name="env" type="Node2D" parent="." unique_id=304212662]
 
