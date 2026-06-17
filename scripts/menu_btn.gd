@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 @onready var pause_menu: Control = %GameMenu
 

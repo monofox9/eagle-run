@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://buktmt5oat7j6" path="res://scripts/coin_instructions.gd" id="9_bf4eo"]
 [ext_resource type="Script" uid="uid://co522udgdeidu" path="res://scripts/menu_btn.gd" id="10_aqf4n"]
 [ext_resource type="PackedScene" uid="uid://dkyvqoq2bbw4u" path="res://scenes/pause_menu.tscn" id="11_1rrsa"]
+[ext_resource type="Texture2D" uid="uid://dc7dec31lxrc3" path="res://assets/ui/menu-notclicked.png" id="13_48o5i"]
+[ext_resource type="Texture2D" uid="uid://c0e6oo2kxrwju" path="res://assets/ui/menu-clicked.png" id="14_8qtbx"]
 
 [node name="game-level" type="Node2D" unique_id=1273591819 groups=["player"]]
 script = ExtResource("1_j5fpy")
@@ -92,12 +94,13 @@ script = ExtResource("9_bf4eo")
 unique_name_in_owner = true
 visible = false
 
-[node name="MenuBtn" type="Button" parent="PauseMenu" unique_id=299807934]
+[node name="MenuBtn" type="TextureButton" parent="PauseMenu" unique_id=728719779]
 offset_left = 17.0
 offset_top = 27.0
 offset_right = 70.0
 offset_bottom = 58.0
-text = "="
+texture_normal = ExtResource("13_48o5i")
+texture_hover = ExtResource("14_8qtbx")
 script = ExtResource("10_aqf4n")
 
 [connection signal="timeout" from="coin-spawner/Timer" to="coin-spawner" method="_on_timer_timeout"]

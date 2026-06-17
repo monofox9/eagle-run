@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcmpan5osbwtg"
-path="res://.godot/imported/eaglrun-sky-night.png-0d979221ddb5b25422df4f41772ee45c.ctex"
+uid="uid://c0e6oo2kxrwju"
+path="res://.godot/imported/menu-clicked.png-17b171c9baf3a8adcce71fcf2072d413.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/env/eaglrun-sky-night.png"
-dest_files=["res://.godot/imported/eaglrun-sky-night.png-0d979221ddb5b25422df4f41772ee45c.ctex"]
+source_file="res://assets/ui/menu-clicked.png"
+dest_files=["res://.godot/imported/menu-clicked.png-17b171c9baf3a8adcce71fcf2072d413.ctex"]
 
 [params]
 
