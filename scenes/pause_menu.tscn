@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dkyvqoq2bbw4u"]
 
+[ext_resource type="FontFile" uid="uid://b7rct46ij4ige" path="res://assets/ui/fonts/BitcountGridDouble-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="1_kukqi"]
 [ext_resource type="Script" uid="uid://rv7lq45ck1an" path="res://scripts/resume_btn.gd" id="1_n87rw"]
 [ext_resource type="Script" uid="uid://bw44u6bru2ynq" path="res://scripts/day_night_btn.gd" id="2_myx47"]
 
@@ -39,16 +40,19 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("1_kukqi")
+theme_override_font_sizes/font_size = 40
 text = "Menu"
 
 [node name="ResumeBtn" type="Button" parent="GridContainer" unique_id=799679243]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kukqi")
 text = "Resume Game"
 script = ExtResource("1_n87rw")
 
 [node name="DayNightBtn" type="Button" parent="GridContainer" unique_id=483107016]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kukqi")
 script = ExtResource("2_myx47")
 
 [connection signal="pressed" from="GridContainer/ResumeBtn" to="GridContainer/ResumeBtn" method="_on_pressed"]
