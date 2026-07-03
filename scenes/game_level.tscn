@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dkyvqoq2bbw4u" path="res://scenes/pause_menu.tscn" id="11_1rrsa"]
 [ext_resource type="Texture2D" uid="uid://dc7dec31lxrc3" path="res://assets/ui/menu-notclicked.png" id="13_48o5i"]
 [ext_resource type="Texture2D" uid="uid://c0e6oo2kxrwju" path="res://assets/ui/menu-clicked.png" id="14_8qtbx"]
+[ext_resource type="AudioStream" uid="uid://buodvwtpc1gc2" path="res://assets/audio/music/day-theme.ogg" id="16_8qtbx"]
+[ext_resource type="Script" uid="uid://qj1oy2nen63g" path="res://scenes/music.gd" id="17_r7flv"]
 
 [node name="game-level" type="Node2D" unique_id=1273591819 groups=["player"]]
 script = ExtResource("1_j5fpy")
@@ -102,6 +104,12 @@ offset_bottom = 58.0
 texture_normal = ExtResource("13_48o5i")
 texture_hover = ExtResource("14_8qtbx")
 script = ExtResource("10_aqf4n")
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=2075544788]
+stream = ExtResource("16_8qtbx")
+autoplay = true
+parameters/looping = true
+script = ExtResource("17_r7flv")
 
 [connection signal="timeout" from="coin-spawner/Timer" to="coin-spawner" method="_on_timer_timeout"]
 [connection signal="pressed" from="PauseMenu/MenuBtn" to="PauseMenu/MenuBtn" method="_on_pressed"]

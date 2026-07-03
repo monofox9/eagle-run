@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://b7rct46ij4ige" path="res://assets/ui/fonts/BitcountGridDouble-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="1_kukqi"]
 [ext_resource type="Script" uid="uid://rv7lq45ck1an" path="res://scripts/resume_btn.gd" id="1_n87rw"]
 [ext_resource type="Script" uid="uid://bw44u6bru2ynq" path="res://scripts/day_night_btn.gd" id="2_myx47"]
+[ext_resource type="Script" uid="uid://dynxp1hw8nlcu" path="res://scenes/quit_btn.gd" id="4_5d2l8"]
 
 [node name="GameMenu" type="Control" unique_id=158152038]
 process_mode = 3
@@ -55,5 +56,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_kukqi")
 script = ExtResource("2_myx47")
 
+[node name="QuitBtn" type="Button" parent="GridContainer" unique_id=1045784115]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kukqi")
+text = "Quit"
+script = ExtResource("4_5d2l8")
+
 [connection signal="pressed" from="GridContainer/ResumeBtn" to="GridContainer/ResumeBtn" method="_on_pressed"]
 [connection signal="pressed" from="GridContainer/DayNightBtn" to="GridContainer/DayNightBtn" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/QuitBtn" to="GridContainer/QuitBtn" method="_on_pressed"]

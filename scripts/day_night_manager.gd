@@ -3,6 +3,8 @@ extends Node
 
 var is_day: bool = true
 
+signal time_of_day(day_night)
+
 const SKY_FAR_DAY   := "res://assets/env/eaglrun-sky-main.png"
 const SKY_FAR_NIGHT := "res://assets/env/eaglrun-sky-night.png"
 const SKY_NEAR_DAY   := "res://assets/env/eaglerun-rooftops.png"
@@ -20,6 +22,10 @@ func _apply() -> void:
 		far_sprite.texture = load(SKY_FAR_NIGHT if !is_day else SKY_FAR_DAY)
 	if near_sprite:
 		near_sprite.texture = load(SKY_NEAR_NIGHT if !is_day else SKY_NEAR_DAY)
+	if !is_day:
+		time_of_day.emit("night")
+	else:
+		time_of_day.emit("day")
 
 func _get_sprite(parallax_name: String) -> Sprite2D:
 	# Walk the tree to find the Sprite2D child of the named Parallax2D
